@@ -1,5 +1,4 @@
 .gradient-button{
-    display: block;
     position: relative;
     margin: 0 0 15px;
     padding: 15px 20px;
@@ -12,7 +11,6 @@
     border-radius: 7px;
     border: none;
     background: linear-gradient(to right, #2b4b62, #4b7078);
-    //@include ripple-out();
     cursor: pointer;
     &:focus{
         outline: none;
