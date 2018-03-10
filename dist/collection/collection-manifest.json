@@ -1,0 +1,35 @@
+{
+  "components": [
+    {
+      "tag": "codext-gradient-button",
+      "dependencies": [],
+      "componentClass": "GradientButton",
+      "componentPath": "components/gradient-button/gradient-button.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/gradient-button/gradient-button.scss"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "color",
+          "type": "String"
+        },
+        {
+          "name": "text",
+          "type": "String"
+        }
+      ],
+      "shadow": true
+    }
+  ],
+  "collections": [],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.6.18",
+    "typescriptVersion": "2.7.2"
+  },
+  "bundles": []
+}

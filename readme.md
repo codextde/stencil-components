@@ -5,3 +5,7 @@
 # @codext/stencil-components
 
 npm i @codext/stencil-components --save 
+
+
+## How to use:
+Import the Component:
