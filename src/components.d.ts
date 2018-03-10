@@ -20,31 +20,30 @@ declare global {
 
 
 import {
-  MyComponent as MyComponent
-} from './components/my-component/my-component';
+  GradientButton as CodextGradientButton
+} from './components/gradient-button/gradient-button';
 
 declare global {
-  interface HTMLMyComponentElement extends MyComponent, HTMLStencilElement {
+  interface HTMLCodextGradientButtonElement extends CodextGradientButton, HTMLStencilElement {
   }
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLCodextGradientButtonElement: {
+    prototype: HTMLCodextGradientButtonElement;
+    new (): HTMLCodextGradientButtonElement;
   };
   interface HTMLElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "codext-gradient-button": HTMLCodextGradientButtonElement;
   }
   interface ElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "codext-gradient-button": HTMLCodextGradientButtonElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "my-component": JSXElements.MyComponentAttributes;
+      "codext-gradient-button": JSXElements.CodextGradientButtonAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
-      first?: string;
-      last?: string;
+    export interface CodextGradientButtonAttributes extends HTMLAttributes {
+      text?: string;
     }
   }
 }
