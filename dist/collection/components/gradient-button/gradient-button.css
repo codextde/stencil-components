@@ -1,5 +1,5 @@
 /* Ripple Out */
-@-webkit-keyframes hvr-ripple-out {
+@-webkit-keyframes gradient-button-ripple-out {
   100% {
     top: -12px;
     right: -12px;
@@ -7,7 +7,7 @@
     left: -12px;
     opacity: 0; } }
 
-@keyframes hvr-ripple-out {
+@keyframes gradient-button-ripple-out {
   100% {
     top: -12px;
     right: -12px;
@@ -16,14 +16,13 @@
     opacity: 0; } }
 
 .gradient-button {
-  display: block;
   position: relative;
   margin: 0 0 15px;
   padding: 15px 20px;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  transition: all ease 0.3s;
+  transition: all ease 0.2s;
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   border-radius: 7px;
@@ -33,16 +32,16 @@
   .gradient-button:focus {
     outline: none; }
   .gradient-button:active {
-    outline: none; }
-    .gradient-button:active:before {
-      opacity: 0; }
-  .gradient-button:hover:before {
-    bottom: -3px; }
+    outline: none;
+    transform: translateY(3px); }
+    .gradient-button:active > .gradient-button--shadow {
+      transform: perspective(100px) rotateX(60deg) translateY(-3px); }
+  .gradient-button:hover {
+    box-shadow: inset 0 0 0 50px rgba(0, 0, 0, 0.1); }
   .gradient-button .gradient-button--shadow {
     border-radius: 5px;
-    transition: all ease 0.3s;
+    transition: all ease 0.2s;
     position: absolute;
-    opacity: 1;
     left: 15px;
     bottom: -8px;
     margin: 0 auto;
