@@ -1,170 +1,11 @@
-
-// DEFAULT OPTIONS
-
-// Prefix for Hover class names
-$nameSpace: 'hvr' !default;
-
-// Durations
-$fastDuration: .1s !default;
-$mediumDuration: .3s !default;
-$slowDuration: .5s !default;
-
-// Colors
-$primaryColor: #e1e1e1 !default;
-$secondaryColor: #666 !default;
-$highlightColor: #ccc !default;
-$activeColor: #2098D1 !default;
-$shadowColor: rgba(0, 0, 0, .6) !default;
-
-// Speech bubbles options
-$tipWidth: 10px !default;  //the width of the speech bubble tip
-$tipHeight: 10px !default; //the height of the speech bubble tip
-$tipColor: $primaryColor !default;
-
-// Arrows options
-$spaceBetweenTextAndArrows: 2.2em !default;
-
-// Curl dimensions
-$curlWidth: 25px !default;
-$curlHeight: 25px !default;
-
-// Curl colors
-$revealAreaColor: white !default;    // reveal area behind the curl
-$curlLineColor: #aaa !default;       // crease line
-$curlTransitionColor: #ccc !default;	// color transitioning from crease line to final color
-$curlLastColor: white !default;		// final color of the back of the curl
-
-// Browser Prefixes - Which CSS prefixes should be used?
-$webkit: true !default;
-$moz: false !default;
-$ms: false !default;
-$o: false !default;
-
-// Compile with or without classes
-$includeClasses: true !default;
-// prefix declarations
-@mixin prefixed($property, $value) {
-    @if $webkit == true {
-      -webkit-#{$property}: #{$value};
-    }
-  
-    @if $moz == true {
-      -moz-#{$property}: #{$value};
-    }
-  
-    @if $ms == true {
-      -ms-#{$property}: #{$value};
-    }
-  
-    @if $o == true {
-      -o-#{$property}: #{$value};
-    }
-  
-    #{$property}: #{$value};
-  }
-  
-  // prefix keyframes
-  @mixin keyframes($name) {
-    @if $webkit == true {
-      @-webkit-keyframes #{$name} {
-        @content;
-      }
-    }
-  
-    @if $moz == true {
-      @-moz-keyframes #{$name} {
-        @content;
-      }
-    }
-  
-    @if $ms == true {
-      @-ms-keyframes #{$name} {
-        @content;
-      }
-    }
-  
-    @if $o == true {
-      @-o-keyframes #{$name} {
-        @content;
-      }
-    }
-  
-    @keyframes #{$name} {
-      @content;
-    }
-  }
-
-/* Ripple Out */
-@include keyframes(#{$nameSpace}-ripple-out) {
-	100% {
-		top: -(6px + 6px);
-		right: -(6px + 6px);
-		bottom: -(6px + 6px);
-		left: -(6px + 6px);
-		opacity: 0;
-	}
-}
-
-@mixin ripple-out {
-	$outerBorderWidth: 6px;
-	$innerBorderWidth: 6px;
-
-	@include hacks();
-	position: relative;
-
-	&:before {
-		content: '';
-		position: absolute;
-		border: $primaryColor solid $outerBorderWidth;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		@include prefixed(animation-duration, 1s);
-	}
-
-	&:hover:before,
-	&:focus:before,
-	&:active:before {
-		@include prefixed(animation-name, #{$nameSpace}-ripple-out);
-	}
-}
-
-// As is often the case, some devices/browsers need additional code to get CSS to work
-// in the most desired way. These mixins are used to quickly drop in hacks for each element
-// Find out more here: https://github.com/IanLunn/Hover/wiki/Hacks-Explained
-
-@mixin hardwareAccel() {
-	// Improve performance on mobile/tablet devices
-	// Perspective reduces blurryness of text in Chrome
-	@include prefixed(transform, perspective(1px) translateZ(0));
-}
-
-@mixin improveAntiAlias() {
-	// Improve aliasing on mobile/tablet devices
-	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-}
-
-@mixin forceBlockLevel() {
-	// Transforms need to be block-level to work
-	display: inline-block;
-	vertical-align: middle;
-}
-
-@mixin hacks() {
-	@include forceBlockLevel();
-	@include hardwareAccel();
-	@include improveAntiAlias();
-}
-
 .gradient-button{
+    display: block;
     position: relative;
-    margin: 0;
+    margin: 0 0 15px;
     padding: 15px 20px;
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    position: relative;
     transition: all ease 0.3s;
     color: white;
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
@@ -187,9 +28,8 @@ $includeClasses: true !default;
             bottom: -3px;
         }
     }
-    &:before{
-
-     border-radius: 5px;
+    .gradient-button--shadow{
+        border-radius: 5px;
         transition: all ease 0.3s;
         position: absolute;
         opacity: 1;
@@ -199,7 +39,6 @@ $includeClasses: true !default;
         height: 20px;
         width: calc(100% - 30px);
         z-index: -1;
-        content: ' ';
         filter: blur(8px);
         transform: perspective( 100px ) rotateX( 60deg );
         background: linear-gradient(to right, #2b4b62, #4b7078);

@@ -43,6 +43,7 @@ declare global {
   }
   namespace JSXElements {
     export interface CodextGradientButtonAttributes extends HTMLAttributes {
+      color?: string;
       text?: string;
     }
   }

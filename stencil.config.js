@@ -5,7 +5,12 @@ exports.config = {
   generateDistribution: true,
   serviceWorker: false,
   plugins: [
-    sass()
+    sass({
+      injectGlobalPaths: [
+        'src/globals/_variables.scss',
+        'src/globals/_mixins.scss'
+      ]
+    })
   ]
 };
 
