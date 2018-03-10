@@ -29,3 +29,11 @@ Use it in HTML:
 ```
   <codext-gradient-button text="Gradient Button - Blue" color="blue"></codext-gradient-button>
 ```
+
+## Local Development 
+```
+npm install
+```
+```
+npm start
+```
