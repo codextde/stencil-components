@@ -44,7 +44,14 @@ declare global {
   namespace JSXElements {
     export interface CodextGradientButtonAttributes extends HTMLAttributes {
       color?: string;
-      text?: string;
+      disabled?: boolean;
+      expand?: 'full' | 'block';
+      fill?: 'clear' | 'outline' | 'solid' | 'default';
+      href?: string;
+      round?: boolean;
+      size?: 'small' | 'default' | 'large';
+      strong?: boolean;
+      type?: string;
     }
   }
 }

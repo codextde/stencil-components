@@ -18,8 +18,49 @@
           "type": "String"
         },
         {
-          "name": "text",
+          "name": "disabled",
+          "type": "Boolean"
+        },
+        {
+          "name": "expand"
+        },
+        {
+          "name": "fill"
+        },
+        {
+          "name": "href",
           "type": "String"
+        },
+        {
+          "name": "round",
+          "type": "Boolean"
+        },
+        {
+          "name": "size"
+        },
+        {
+          "name": "strong",
+          "type": "Boolean"
+        },
+        {
+          "name": "type",
+          "type": "String"
+        }
+      ],
+      "states": [
+        {
+          "name": "keyFocus"
+        }
+      ],
+      "hostElement": {
+        "name": "el"
+      },
+      "events": [
+        {
+          "event": "ionBlur"
+        },
+        {
+          "event": "ionFocus"
         }
       ],
       "shadow": true

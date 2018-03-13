@@ -16,26 +16,60 @@
     opacity: 0; } }
 
 .gradient-button {
+  text-align: center;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   position: relative;
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  vertical-align: top;
+  vertical-align: -webkit-baseline-middle;
+  transition: background-color, opacity 100ms linear;
+  font-kerning: none;
+  user-select: none;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   margin: 0 0 15px;
   padding: 15px 20px;
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
-  transition: all ease 0.2s;
+  transition: all linear 0.1s;
   color: white;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
   border-radius: 7px;
-  border: none;
   background: linear-gradient(to right, #2b4b62, #4b7078);
-  cursor: pointer; }
+  transform-style: preserve-3d;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent; }
+  .gradient-button .button-inner {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%; }
+  .gradient-button[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: .6; }
+    .gradient-button[disabled] > .gradient-button--shadow {
+      display: none; }
   .gradient-button:focus {
     outline: none; }
   .gradient-button:active {
     outline: none;
     transform: translateY(3px); }
     .gradient-button:active > .gradient-button--shadow {
-      transform: perspective(100px) rotateX(60deg) translateY(-3px); }
+      transform: perspective(100px) rotateX(60deg) translateY(-5px); }
   .gradient-button:hover {
     box-shadow: inset 0 0 0 50px rgba(0, 0, 0, 0.1); }
   .gradient-button .gradient-button--shadow {
@@ -43,7 +77,7 @@
     transition: all ease 0.2s;
     position: absolute;
     left: 15px;
-    bottom: -8px;
+    bottom: -10px;
     margin: 0 auto;
     height: 20px;
     width: calc(100% - 30px);
@@ -51,3 +85,44 @@
     filter: blur(8px);
     transform: perspective(100px) rotateX(60deg);
     background: linear-gradient(to right, #2b4b62, #4b7078); }
+  .gradient-button.large {
+    padding: 5px 20px;
+    height: 2.8em;
+    font-size: 20px; }
+  .gradient-button.small {
+    height: 2.1em;
+    font-size: 13px; }
+  .gradient-button.block {
+    display: block;
+    clear: both;
+    width: 100%; }
+  .gradient-button.block::after {
+    clear: both; }
+  .gradient-button.full {
+    display: block;
+    width: 100%; }
+    .gradient-button.full .gradient-button--shadow {
+      transform: perspective(500px) rotateX(45deg); }
+    .gradient-button.full:active {
+      outline: none;
+      transform: translateY(3px); }
+      .gradient-button.full:active > .gradient-button--shadow {
+        transform: perspective(500px) rotateX(45deg) translateY(-5px); }
+  .gradient-button .button-full.button-outline {
+    border-radius: 0;
+    border-right-width: 0;
+    border-left-width: 0; }
+  .gradient-button ion-icon {
+    font-size: 1.4em;
+    pointer-events: none; }
+  .gradient-button ion-icon[slot="start"] {
+    margin: 0 -0.3em 0 0.3em; }
+  .gradient-button ion-icon[slot="end"] {
+    margin: 0 0.3em 0 -0.2em; }
+  .gradient-button ion-icon[slot="icon-only"] {
+    font-size: 1.8em; }
+  .gradient-button.strong {
+    font-weight: bold;
+    text-transform: uppercase; }
+  .gradient-button.round {
+    border-radius: 50vw; }

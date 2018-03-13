@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
   <script src="/build/gradient-button.js"></script>
-
 </head>
+
 <body>
 
-  <codext-gradient-button text="Gradient Button - Darkblue" color="darkblue"></codext-gradient-button>
-  <codext-gradient-button text="Gradient Button - Green" color="green"></codext-gradient-button>
-  <codext-gradient-button text="Gradient Button - Pink" color="pink"></codext-gradient-button>
-  <codext-gradient-button text="Gradient Button - Blue" color="blue"></codext-gradient-button>
+  <codext-gradient-button color="darkblue">Gradient Button - Darkblue</codext-gradient-button>
+  <codext-gradient-button color="green">Gradient Button - Green</codext-gradient-button>
+  <codext-gradient-button color="pink">Gradient Button - Pink</codext-gradient-button>
+  <codext-gradient-button color="blue">Gradient Button - Blue</codext-gradient-button>
+
+
+
+  <p style="display: none">
+    <codext-gradient-button color="darkblue" disabled>Gradient Button - Darkblue - Disabled</codext-gradient-button>
+    <codext-gradient-button color="green" expand="full">Gradient Button - Green - Full</codext-gradient-button>
+    <codext-gradient-button color="pink" size="small" strong="true" round="true">Gradient Button - Pink - Large, Strong, Round</codext-gradient-button>
+  </p>
+
+
 
 
 </body>
+
 </html>
