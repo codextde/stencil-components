@@ -81,6 +81,8 @@ import '../../stencil.core';
 import '../../stencil.core';
 import '../../stencil.core';
 import '../../stencil.core';
+import '../../stencil.core';
+import '../../stencil.core';
 import { EventEmitter } from '../../stencil.core';
 import { BlurEvent, FocusEvent } from '../../utils/input-interfaces';
 export interface IColor {
