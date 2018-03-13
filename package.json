@@ -1,6 +1,6 @@
 {
   "name": "@codext/stencil-components",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A set of vanillajs web components build with stencil",
   "main": "dist/gradient-button.js",
   "types": "dist/types/index.d.ts",

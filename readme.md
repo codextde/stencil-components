@@ -15,7 +15,7 @@ npm i @codext/stencil-components --save
 
 Import the Component:
 ```
-<script src="https://unpkg.com/@codext/stencil-components@0.0.4/dist/gradient-button.js"></script>
+<script src="https://unpkg.com/@codext/stencil-components@0.0.6/dist/gradient-button.js"></script>
 ```
 Use it in HTML:
 ```
